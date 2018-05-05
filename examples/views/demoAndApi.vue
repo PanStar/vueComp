@@ -4,14 +4,20 @@
         <div class="comp-content">
             <v-hello :data="{name: 'your name'}"></v-hello>
         </div>
+        <h1>Carousel</h1>
+        <div class="comp-content">
+            <Carousel :data="['a','b']"></Carousel>
+        </div>
     </div>
 </template>
 <script>
+    import utils from '../../src/index.js';
     export default {
         data(){
             return {
             }
         },
+        components: utils,
         methods: {
         },
 

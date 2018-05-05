@@ -1,1 +1,20 @@
-.lf {float: left}
+@import "reset";
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.hide {
+  display: none!important
+}
+
+.show {
+  display: block!important
+}

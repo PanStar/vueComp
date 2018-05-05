@@ -1,2 +1,3 @@
-import HelloWorld from './HelloWorld/HelloWorld.vue'
-export default { HelloWorld }
+import HelloWorld from './HelloWorld/index.vue'
+import Carousel from './mCarousel/index.vue'
+export default { HelloWorld, Carousel }

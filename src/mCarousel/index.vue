@@ -1,12 +1,11 @@
 <template>
   <div>
-    <span>{{data.name}}</span>
-    <span> HelloWorld!</span>
   </div>
 </template>
 <script>
+  import BScroll from 'better-scroll'
 export default {
-    name: 'HelloWorld',
+    name: 'Carousel',
     data () {
         return {}
     },
