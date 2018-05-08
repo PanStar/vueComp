@@ -1,6 +1,6 @@
 {
   "name": "vue-comps-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vue Components for H5",
   "main": "dist/comps-utils.min.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "examplesDev": "webpack-dev-server --open --inline --hot --host localhost --port 8781 --config webpack.config.examples.js"
   },
   "keywords": [
-    "vue utils"
+    "vue", "utils"
   ],
   "author": "PanStar",
   "license": "ISC",
