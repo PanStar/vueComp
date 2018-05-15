@@ -10,7 +10,8 @@
     "examplesDev": "webpack-dev-server --open --inline --hot --host localhost --port 8781 --config webpack.config.examples.js"
   },
   "keywords": [
-    "vue", "utils"
+    "vue",
+    "utils"
   ],
   "author": "PanStar",
   "license": "ISC",
@@ -49,5 +50,8 @@
     "vuex": "^3.0.1",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5"
+  },
+  "dependencies": {
+    "vue-concise-slider": "^2.4.8"
   }
 }

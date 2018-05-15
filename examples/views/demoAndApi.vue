@@ -5,8 +5,12 @@
             <v-hello :data="{name: 'your name'}"></v-hello>
         </div>
         <h1>Carousel</h1>
+        <div class="comp-content hide">
+            <Carousel></Carousel>
+        </div>
+        <h1>ListBox</h1>
         <div class="comp-content">
-            <Carousel :data="['a','b']"></Carousel>
+            <ListBox :list="list"></ListBox>
         </div>
     </div>
 </template>
@@ -15,6 +19,18 @@
     export default {
         data(){
             return {
+                list: [
+                    {name: '0', url: ''},
+                    {name: '1', url: ''},
+                    {name: '2', url: ''},
+                    {name: '3', url: ''},
+                    {name: '4', url: ''},
+                    {name: '5', url: ''},
+                    {name: '6', url: ''},
+                    {name: '7', url: ''},
+                    {name: '8', url: ''},
+                    {name: '9', url: ''}
+                ]
             }
         },
         components: utils,
@@ -22,7 +38,9 @@
         },
 
         created() {
-            let that = this;
+            this.list.forEach(i => {
+                i.url = `examples/views/image/emoji/${i.name}.png`;
+            });
         }
     }
 </script>
