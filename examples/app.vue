@@ -5,9 +5,8 @@
 <template>
     <div>
         <div class="left-top-nav">
-            <router-link class="link-item" to="demoAndApi">API</router-link>
-            <p>demos</p>
-            <router-link class="link-item" target="_blank" to="demoAndApi">示例</router-link>
+            <router-link class="link-item" to="demoAndApi" target="_blank">API</router-link><br/>
+            <router-link class="link-item" to="demoAndApi">示例</router-link>
         </div>
         <router-view></router-view>
     </div>
@@ -18,7 +17,7 @@
             return {}
         },
         mounted () {
-            console.log('app.vue');
+            // console.log('app.vue');
         },
         beforeDestroy () {
 

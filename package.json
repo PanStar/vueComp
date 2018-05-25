@@ -1,6 +1,6 @@
 {
   "name": "vue-comps-utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Vue Components for H5",
   "main": "dist/comps-utils.min.js",
   "scripts": {
@@ -37,9 +37,11 @@
     "jquery": "^3.3.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "lodash": "^4.17.5",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "vue": "^2.5.9",
+    "vue-concise-slider": "^2.4.8",
     "vue-hot-reload-api": "^2.2.4",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^13.5.0",
@@ -50,8 +52,5 @@
     "vuex": "^3.0.1",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5"
-  },
-  "dependencies": {
-    "vue-concise-slider": "^2.4.8"
   }
 }

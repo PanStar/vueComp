@@ -55,12 +55,12 @@
                 const row = Math.floor(parseInt(pNode.height()) / parseInt(cNode.height()));
                 this.pageInfo.limit = col * row || 1;
                 this.pageInfo.pages = Math.ceil(this.pageInfo.total / this.pageInfo.limit);
-                console.log('pageInfo', this.pageInfo, col, row);
+                // console.log('pageInfo', this.pageInfo, col, row);
             }
         },
         created () {
             const that = this;
-            console.log('create', this.list);
+            // console.log('create', this.list);
             $(function () {
                 $('.list-box .content').on('click', '.tool', function () {
                     alert($(this).find('div').html());
@@ -76,11 +76,11 @@
                 that.childNode = $('.list-box .tool').eq(0);
                 that.pageInfo.total = that.list.length;
                 that._resize();
-                console.log('create', that.pageInfo);
+                // console.log('create', that.pageInfo);
             });
         },
         mounted () {
-            console.log('mounted', this.list);
+            // console.log('mounted', this.list);
         }
     }
 </script>
@@ -88,27 +88,28 @@
     @import "../common/common.less";
 
     .list-box {
-        min-width: 40pt;
+        padding: 2rem 0;
+        min-width: 1rem;
         background-color: #101419;
     }
     .content {
-        padding: 10pt 5pt;
-        width: 100%;
-        max-height: 195pt;
+        padding-bottom: 0;
+        margin-bottom: 20px;
+        max-height: 5rem;
         overflow: hidden;
     }
     .tool {
         float: left;
-        width: 39pt;
-        height: 39pt;
+        width: 4rem;
+        height: 5rem;
         cursor: pointer;
         img {
-            padding: 10pt 12pt 2pt 12pt;
-            width: 13pt;
-            height: 13pt;
+            padding: 1rem 1rem 0.5rem;
+            width: 2rem;
+            height: 2rem;
         }
         div {
-            font-size: 6pt;
+            font-size: 1rem;
             text-align: center;
             color: #999;
         }
@@ -123,8 +124,6 @@
         li {
             position: relative;
             display: inline-block;
-            height: 20px;
-            width: 20px;
             padding: 0;
             cursor: pointer;
         }
@@ -132,13 +131,11 @@
             border: 0;
             background: transparent;
             display: block;
-            height: 20px;
-            width: 20px;
             outline: none;
             line-height: 0;
             font-size: 0;
             color: transparent;
-            padding: 5px;
+            padding: 0.5rem;
             cursor: pointer;
         }
         button:before {
@@ -146,11 +143,11 @@
             top: 0;
             left: 0;
             content: "\2022";
-            width: 20px;
-            height: 20px;
-            font-size: 18px;
+            width: 1rem;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 2rem;
             font-family: arial, sans-serif;
-            line-height: 20px;
             text-align: center;
             color: gray;
             -webkit-transition: all .3s;
@@ -163,7 +160,7 @@
             opacity: .75;
         }
         li + li {
-            margin-left: 5px;
+            margin-left: 0.5rem;;
         }
     }
 

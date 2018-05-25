@@ -48,13 +48,13 @@
         methods: {
             // Listener event
             slide (data) {
-                console.log(data)
+                // console.log(data)
             },
             onTap (data) {
-                console.log(data)
+                // console.log(data)
             },
             onInit (data) {
-                console.log(data)
+                // console.log(data)
             }
         },
         mounted () {
@@ -79,7 +79,7 @@
             }, 2e3)
         },
         created () {
-            console.log('created');
+            // console.log('created');
         }
     }
 </script>
