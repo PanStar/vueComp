@@ -17,6 +17,7 @@
         name: 'ListBox',
         data () {
             return {
+                _status: false, // 局部刷新用
                 contentNode: null,
                 footerNode: null,
                 childNode: null,
@@ -55,6 +56,7 @@
                 const row = Math.floor(parseInt(pNode.height()) / parseInt(cNode.height()));
                 this.pageInfo.limit = col * row || 1;
                 this.pageInfo.pages = Math.ceil(this.pageInfo.total / this.pageInfo.limit);
+                this._status = !this._status;
                 // console.log('pageInfo', this.pageInfo, col, row);
             }
         },
@@ -80,7 +82,7 @@
             });
         },
         mounted () {
-            // console.log('mounted', this.list);
+            console.log('mounted', this.list);
         }
     }
 </script>
