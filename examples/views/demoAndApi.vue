@@ -19,8 +19,7 @@
         </div>
         <h1>Modal</h1>
         <div class="comp-content">
-            <Button :text="modalVisible?'隐藏':'显示'" :primary="true" @click="toggleModal" v-if="false"></Button>
-            <Button :text="'显示'" :primary="true" @click="toggleModal"></Button>
+            <Button :text="modalVisible?'隐藏':'显示'" :primary="true" @click="toggleModal"></Button>
             <Modal :props="modalProps" :visible="modalVisible" :styles="modalStyle"></Modal>
         </div>
     </div>

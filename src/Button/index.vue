@@ -43,7 +43,6 @@ export default {
       border-color: @primary-color-light;
     }
     &:active,&.active {
-      ;
     }
   }
   .btn-primary {
