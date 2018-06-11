@@ -2,27 +2,27 @@
   <button class="btn" :class="{'btn-primary': primary}" @click="click">{{text}}</button>
 </template>
 <script>
-export default {
-    name: 'Button',
-    data () {
-        return {}
-    },
-    props: {
-        text: {
-            type: String
+    export default {
+        name: 'Button',
+        data () {
+            return {}
         },
-        primary: {
-          type: Boolean,
-            default: false
-        }
-    },
-    methods: {
-        click () {
-            this.$emit('click');
-        }
-    },
-    created () {}
-}
+        props: {
+            text: {
+                type: String
+            },
+            primary: {
+                type: Boolean,
+                default: false
+            }
+        },
+        methods: {
+            click () {
+                this.$emit('click');
+            }
+        },
+        created () {}
+    }
 </script>
 <style lang="less" scoped>
   @import "../common/common.less";
@@ -31,7 +31,7 @@ export default {
     display: inline-block;
     line-height: 1.5;
     padding: 5px 15px;
-    font-size: 14px;
+    font-size: @font-size;
     font-weight: 400;
     text-align: center;
     background-color: #fff;

@@ -19,91 +19,90 @@
   </div>
 </template>
 <script>
-  import {assign, cloneDeep} from 'lodash';
-  import Button from './../Button';
-export default {
-    name: 'Modal',
-    data () {
-        return {
-            mStyle: { // 默认配置
-                top: 100
-            }
-        }
-    },
-    components: {
-        Button
-    },
-    props: {
-        props: {
-            type: Object,
-            default: {}
-        },
-        visible: {
-            type: Boolean,
-            default: false
-        },
-        title: {
-            type: String,
-            default: 'Modal'
-        },
-        content: {
-            type: String,
-            default: ''
-        },
-        okText: {
-            type: String,
-            default: '确定'
-        },
-        cancelText: {
-            type: String,
-            default: '取消'
-        },
-        ok: {
-            type: Function,
-            default: () => 'default'
-        },
-        cancel: {
-            type: Function,
-            default: () => 'default'
-        },
-        styles: {
-            type: Object,
-            default: {}
-        }
-    },
-    methods: {
-        getModalStyle () {
-            let style = this.mStyle;
-            assign(style, this.styles);
-            for (let k in style) {
-                if (!/[\D]/.test(style[k])) {
-                    style[k] += 'px';
+    import {assign, cloneDeep} from 'lodash';
+    import Button from './../Button';
+    export default {
+        name: 'Modal',
+        data () {
+            return {
+                mStyle: { // 默认配置
+                    top: 100
                 }
             }
-            console.log(11, style, this.styles);
-            return style;
         },
-        okFun () {
-            if (this.ok() === 'default') {
-                console.log('ok');
+        components: {
+            Button
+        },
+        props: {
+            props: {
+                type: Object,
+                default: {}
+            },
+            visible: {
+                type: Boolean,
+                default: false
+            },
+            title: {
+                type: String,
+                default: 'Modal'
+            },
+            content: {
+                type: String,
+                default: ''
+            },
+            okText: {
+                type: String,
+                default: '确定'
+            },
+            cancelText: {
+                type: String,
+                default: '取消'
+            },
+            ok: {
+                type: Function,
+                default: () => 'default'
+            },
+            cancel: {
+                type: Function,
+                default: () => 'default'
+            },
+            styles: {
+                type: Object,
+                default: {}
             }
         },
-        cancelFun () {
-            if (this.cancel() === 'default') {
-                console.log('cancel');
+        methods: {
+            getModalStyle () {
+                let style = this.mStyle;
+                assign(style, this.styles);
+                for (let k in style) {
+                    if (!/[\D]/.test(style[k])) {
+                        style[k] += 'px';
+                    }
+                }
+                return style;
+            },
+            okFun () {
+                if (this.ok() === 'default') {
+                    console.log('ok');
+                }
+            },
+            cancelFun () {
+                if (this.cancel() === 'default') {
+                    console.log('cancel');
+                }
             }
+        },
+        created () {
+            for (let k in this.props) {
+                this[k] = this.props[k];
+            }
+            this.getModalStyle();
+        },
+        mounted () {
+            // console.log('m', this.visible)
         }
-    },
-    created () {
-        for (let k in this.props) {
-            this[k] = this.props[k];
-        }
-        this.getModalStyle();
-    },
-    mounted () {
-        console.log('m', this.visible)
     }
-}
 </script>
 <style lang="less" scoped>
   @import "../common/common.less";
@@ -120,17 +119,17 @@ export default {
     }
   }
   @keyframes animation-up {
-     0% {
-       opacity:0;
-       -webkit-transform: translateY(80%);
-       transform: translateY(80%);
-     }
-     100% {
-       opacity:1;
-       -webkit-transform: translateY(0);
-       transform: translateY(0);
-     }
-   }
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(80%);
+      transform: translateY(80%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
   .animation-up {
     -webkit-animation-name: animation-up;
     animation-name: animation-up
@@ -157,7 +156,7 @@ export default {
     outline: 0;
   }
   .modal-doc {
-    font-size: 14px;
+    font-size: @font-size;
     line-height: 1.5;
     color: rgba(0,0,0,.65);
     -webkit-box-sizing: border-box;
@@ -186,7 +185,7 @@ export default {
     z-index: 10;
     outline: 0;
     padding: 8px 12px;
-    font-size: 20px;
+    font-size: @font-size-large;
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
@@ -207,14 +206,14 @@ export default {
   }
   .modal-title {
     margin: 0;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: @font-size-large;
+    line-height: 1.5;
     font-weight: 500;
     color: rgba(0,0,0,.85);
   }
   .modal-body {
     padding: 24px;
-    font-size: 14px;
+    font-size: @font-size;
     line-height: 1.5;
     word-wrap: break-word;
   }
