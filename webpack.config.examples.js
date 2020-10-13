@@ -3,10 +3,11 @@
  */
 const path = require("path");
 const webpack = require("webpack");
-const uglify = require("uglifyjs-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     devtool: 'source-map',
     entry: "./examples/main",
     output: {
@@ -49,6 +50,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new VueLoaderPlugin(),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify("production")

@@ -5,7 +5,7 @@
 import 'babel-polyfill'
 
 /* 引入Vue相关 */
-import Vue from 'vue'
+import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Routers from './router';
 import App from './app.vue';
